@@ -1,3 +1,5 @@
+# nohup R CMD BATCH /home/gmatthews1/greg/tra/PC_GAN_Parallel.R  /home/gmatthews1/greg/tra/PC_GAN_Parallel.Rout &
+
 #let's start with a bunch of 10 by 10 image.  
 expit <- function(x){
   out <- exp(x)/(1+exp(x))
@@ -179,7 +181,7 @@ for (iter in 1:10){print(iter)
   pc_dat  <- dat%*%pc$rotation
   
   x <- pc_dat
-  y <- c(rep(1,length(filnames)),rep(0,n_fake))
+  y <- c(rep(1,length(imList)),rep(0,n_fake))
   
   mod <- randomForest(x,factor(y))
   
