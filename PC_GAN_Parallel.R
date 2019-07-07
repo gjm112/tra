@@ -53,7 +53,7 @@ logit <- function(x){
 # }
 #save(imList, file = "/Users/gregorymatthews/Dropbox/tra/imList_picasso.RData")
 
-load("/Users/gregorymatthews/Dropbox/tra/imList_picasso.RData")
+load("/home/gmatthews1/greg/tra/imList_picasso.RData")
 
 
 # for (q in 1:length(filnames)){
@@ -66,6 +66,9 @@ load("/Users/gregorymatthews/Dropbox/tra/imList_picasso.RData")
 # }
 #   
 #  }
+xres <- dim(imList[[1]])[1]
+yres <- dim(imList[[1]])[2]
+
 
 real <- c(imList[[1]])
 for (q in 2:length(imList)){
@@ -73,7 +76,7 @@ for (q in 2:length(imList)){
 }
 
 set.seed(1234)
-n_fake <- 10*length(filnames)
+n_fake <- 10*length(imList)
 fake <- matrix(rnorm(xres*yres*3*n_fake),nrow = n_fake)
 
 dat <- rbind(real, fake)
@@ -82,7 +85,7 @@ pc <- prcomp(logit(dat))
 pc_dat  <- dat%*%pc$rotation
 
 x <- pc_dat
-y <- c(rep(1,length(filnames)),rep(0,n_fake))
+y <- c(rep(1,length(imList)),rep(0,n_fake))
 
 library(randomForest)
 mod <- randomForest(x,factor(y))
@@ -113,14 +116,14 @@ for (g in 1:n_fake){
     
   }
   
-  plot(0,0, xlim = c(0,xres), ylim = c(0,yres), col = "white", asp = 1)
-  for (i in 1:xres){
-    for (j in 1:yres){
-      col <- rgb(arr[i,j,1], arr[i,j,2], arr[i,j,3])
-      polygon(c(0,1,1,0) + i - 1, c(0,0,1,1) + yres -j, col = col, border = col)
-    }
-  }
-  
+  # plot(0,0, xlim = c(0,xres), ylim = c(0,yres), col = "white", asp = 1)
+  # for (i in 1:xres){
+  #   for (j in 1:yres){
+  #     col <- rgb(arr[i,j,1], arr[i,j,2], arr[i,j,3])
+  #     polygon(c(0,1,1,0) + i - 1, c(0,0,1,1) + yres -j, col = col, border = col)
+  #   }
+  # }
+  # 
   
   good[[g]] <- expit(vec %*%t(pc$rotation))
 }
