@@ -13,43 +13,48 @@ logit <- function(x){
 }
 
 
-n <- 7 #sample size
-xres <- 5
-yres <- 5
-library(EBImage)
-filelist <- red <- green <- blue <- list()
-#im<-readImage("/Users/gregorymatthews/Dropbox/Rart/queenOfHearts.jpeg")
-filnames <- c("denny","greg","sarah","michaela","john")
-path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/opioidFaces/"
-path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/eos/"
-#path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/mondrian/"
-path <- "/home/gmatthews1/greg/tra/picasso/"
-#path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/red/"
-filnames <- list.files(path)
-imList <- list()
-for (i in 1:length(filnames) ){
-  im<-readImage(paste0(path,filnames[i]))
-  #im<-readImage("/Users/gregorymatthews/Desktop/desktopCrap/greg.png")
-  #im<-readImage("/Users/gregorymatthews/Desktop/desktopCrap/denny.png")
-  #im<-readImage("/Users/gregorymatthews/Desktop/obama.png")
-  #im <- readImage("/Users/gregorymatthews/Desktop/guyAlley.jpg")
-  #imMagr <- readImage("/Users/gregorymatthews/Desktop/desktopCrap/magritte.png")
-  #imMagr <- readImage("/Users/gregorymatthews/Desktop/magrTrain.png")
-  ##imDali <- readImage("/Users/gregorymatthews/Desktop/dali.png")
-  #imVangogh <- readImage("/Users/gregorymatthews/Desktop/vangogh.png")
-  
-  ddd<-dim(im)
-  gran<-xres
-  grany<-yres
-  xxx<-round(seq(1,ddd[1],length=gran))
-  yyy<-round(seq(1,ddd[2],length=grany))
-  small<-im@.Data[xxx,yyy,1:3]
-  imList[[i]] <- small
-  
-  #red[[i]] <- small[,,1]
-  #green[[i]] <- small[,,2]
-  #blue[[i]] <- small[,,3]
-}
+# n <- 7 #sample size
+# xres <- 500
+# yres <- 500
+# library(EBImage)
+# filelist <- red <- green <- blue <- list()
+# #im<-readImage("/Users/gregorymatthews/Dropbox/Rart/queenOfHearts.jpeg")
+# filnames <- c("denny","greg","sarah","michaela","john")
+# path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/opioidFaces/"
+# path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/eos/"
+# #path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/mondrian/"
+# path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/picasso/"
+# #path <- "/home/gmatthews1/greg/tra/picasso/"
+# #path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/red/"
+# filnames <- list.files(path)
+# imList <- list()
+# for (i in 1:length(filnames) ){
+#   im<-readImage(paste0(path,filnames[i]))
+#   #im<-readImage("/Users/gregorymatthews/Desktop/desktopCrap/greg.png")
+#   #im<-readImage("/Users/gregorymatthews/Desktop/desktopCrap/denny.png")
+#   #im<-readImage("/Users/gregorymatthews/Desktop/obama.png")
+#   #im <- readImage("/Users/gregorymatthews/Desktop/guyAlley.jpg")
+#   #imMagr <- readImage("/Users/gregorymatthews/Desktop/desktopCrap/magritte.png")
+#   #imMagr <- readImage("/Users/gregorymatthews/Desktop/magrTrain.png")
+#   ##imDali <- readImage("/Users/gregorymatthews/Desktop/dali.png")
+#   #imVangogh <- readImage("/Users/gregorymatthews/Desktop/vangogh.png")
+#   
+#   ddd<-dim(im)
+#   gran<-xres
+#   grany<-yres
+#   xxx<-round(seq(1,ddd[1],length=gran))
+#   yyy<-round(seq(1,ddd[2],length=grany))
+#   small<-im@.Data[xxx,yyy,1:3]
+#   imList[[i]] <- small
+#   
+#   #red[[i]] <- small[,,1]
+#   #green[[i]] <- small[,,2]
+#   #blue[[i]] <- small[,,3]
+# }
+#save(imList, file = "/Users/gregorymatthews/Dropbox/tra/imList_picasso.RData")
+
+load("/Users/gregorymatthews/Dropbox/tra/imList_picasso.RData")
+
 
 # for (q in 1:length(filnames)){
 # plot(0,0, xlim = c(0,xres), ylim = c(0,yres), col = "white")
