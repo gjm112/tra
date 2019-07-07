@@ -23,8 +23,8 @@ filnames <- c("denny","greg","sarah","michaela","john")
 path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/opioidFaces/"
 path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/eos/"
 #path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/mondrian/"
-path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/picasso/"
-path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/red/"
+path <- "/home/gmatthews1/greg/tra/picasso/"
+#path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/red/"
 filnames <- list.files(path)
 imList <- list()
 for (i in 1:length(filnames) ){
@@ -121,7 +121,7 @@ for (g in 1:n_fake){
 }
 
 
-gen <- function(model, thresh = 0.95, maxit = 1000){
+gen <- function(model, thresh = 0.95, maxit = 100000){
   score <- 0
   vec <- rnorm(ncol(x))
   count <- 0
@@ -176,10 +176,12 @@ for (iter in 1:10){print(iter)
   mod <- randomForest(x,factor(y))
   
   library(parallel)
-  good <- mclapply(as.list(c(1:n_fake)),gen, model = mod, mc.cores = 4)
+  good <- mclapply(as.list(c(1:n_fake)),gen, model = mod, mc.cores = 32)
   
 }
   
+
+save.image("/home/gmatthews1/greg/tra/picasso_20190707.RData")
   
 #   
 #   
