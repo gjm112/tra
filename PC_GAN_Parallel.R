@@ -25,7 +25,7 @@ logit <- function(x){
 # path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/opioidFaces/"
 # path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/eos/"
 # #path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/mondrian/"
-# path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/picasso/"
+# path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/landscape/"
 # #path <- "/home/gmatthews1/greg/tra/picasso/"
 # #path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/red/"
 # filnames <- list.files(path)
@@ -40,7 +40,7 @@ logit <- function(x){
 #   #imMagr <- readImage("/Users/gregorymatthews/Desktop/magrTrain.png")
 #   ##imDali <- readImage("/Users/gregorymatthews/Desktop/dali.png")
 #   #imVangogh <- readImage("/Users/gregorymatthews/Desktop/vangogh.png")
-#   
+# 
 #   ddd<-dim(im)
 #   gran<-xres
 #   grany<-yres
@@ -48,14 +48,14 @@ logit <- function(x){
 #   yyy<-round(seq(1,ddd[2],length=grany))
 #   small<-im@.Data[xxx,yyy,1:3]
 #   imList[[i]] <- small
-#   
+# 
 #   #red[[i]] <- small[,,1]
 #   #green[[i]] <- small[,,2]
 #   #blue[[i]] <- small[,,3]
 # }
-#save(imList, file = "/Users/gregorymatthews/Dropbox/tra/imList_picasso.RData")
+# save(imList, file = "/Users/gregorymatthews/Dropbox/tra/imList_landscape.RData")
 
-load("/home/gmatthews1/greg/tra/imList_picasso.RData")
+load("/home/gmatthews1/greg/tra/imList_landscape.RData")
 
 
 # for (q in 1:length(filnames)){
@@ -66,7 +66,7 @@ load("/home/gmatthews1/greg/tra/imList_picasso.RData")
 #     polygon(c(0,1,1,0) + i - 1, c(0,0,1,1) + yres -j, col = col, border = col)
 #   }
 # }
-#   
+# 
 #  }
 xres <- dim(imList[[1]])[1]
 yres <- dim(imList[[1]])[2]
