@@ -56,6 +56,7 @@ logit <- function(x){
 # save(imList, file = "/Users/gregorymatthews/Dropbox/tra/imList_landscape.RData")
 
 load("/home/gmatthews1/greg/tra/imList_landscape.RData")
+#load("/Users/gregorymatthews/Dropbox/tra/imList_landscape.RData")
 
 
 # for (q in 1:length(filnames)){
@@ -187,11 +188,16 @@ for (iter in 1:10){print(iter)
   
   library(parallel)
   good <- mclapply(as.list(c(1:n_fake)),gen, model = mod, mc.cores = 32)
-  
-}
+  stuff <- list(dat, pc)
+  save(stuff, file = "/home/gmatthews1/greg/tra/picasso_small_20190709.RData")
+  }
   
 
 save.image("/home/gmatthews1/greg/tra/picasso_20190707.RData")
+#save.image("/Users/gregorymatthews/Dropbox/tra/picasso_2019079.RData")
+#stuff <- list(dat, pc$rotation)
+#save(stuff, file = "/home/gmatthews1/greg/tra/picasso_small_20190709.RData")
+
   
 #   
 #   
