@@ -14,7 +14,7 @@ logit <- function(x){
   return(out)
 }
 
-
+# 
 # n <- 7 #sample size
 # xres <- 500
 # yres <- 500
@@ -26,7 +26,8 @@ logit <- function(x){
 # path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/eos/"
 # #path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/mondrian/"
 # path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/landscape/"
-# #path <- "/home/gmatthews1/greg/tra/picasso/"
+# path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/minimal/"
+# path <- "/Users/gregorymatthews/Dropbox/tra/minimalism/"
 # #path <- "/Users/gregorymatthews/Dropbox/Rart/DataArtProject/red/"
 # filnames <- list.files(path)
 # imList <- list()
@@ -53,9 +54,9 @@ logit <- function(x){
 #   #green[[i]] <- small[,,2]
 #   #blue[[i]] <- small[,,3]
 # }
-# save(imList, file = "/Users/gregorymatthews/Dropbox/tra/imList_landscape.RData")
+#  #save(imList, file = "/Users/gregorymatthews/Dropbox/tra/imList_minimalism.RData")
 
-load("/home/gmatthews1/greg/tra/imList_landscape.RData")
+load("/home/gmatthews1/greg/tra/imList_minimalism.RData")
 #load("/Users/gregorymatthews/Dropbox/tra/imList_landscape.RData")
 
 
@@ -193,7 +194,7 @@ for (iter in 1:10){print(iter)
   }
   
 
-save.image("/home/gmatthews1/greg/tra/picasso_20190707.RData")
+save.image("/home/gmatthews1/greg/tra/minimalism_20190712.RData")
 #save.image("/Users/gregorymatthews/Dropbox/tra/picasso_2019079.RData")
 #stuff <- list(dat, pc$rotation)
 #save(stuff, file = "/home/gmatthews1/greg/tra/picasso_small_20190709.RData")
